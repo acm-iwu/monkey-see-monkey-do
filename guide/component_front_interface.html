@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+
+    <title>Monkey See Monkey Do</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/site.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body data-spy="scroll" data-target=".sidenav">
+
+    <div class="container">
+
+      <!-- Static navbar -->
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Monkey See Monkey Do</a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="index.html">Overview</a></li>
+              <li class="dropdown active">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Components <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+        		  <li class="dropdown-header">Front-End</li>
+                  <li class="active"><a href="component_front_interface.html">Interface &amp; Design</a></li>
+                  <li><a href="component_front_javascript.html">Database JavaScript</a></li>
+
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Back-End</li>
+                  <li><a href="component_back_database_upload.html">Database Upload Form</a></li>
+                  <li><a href="component_back_database_deliver.html">Deliver Database to Front-End</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </div>
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="col-md-9">
+        <h1 class="page-header main">Front-End: Interface &amp; Design</h1>
+        <p class="lead">This component deals with creating the layout, design, and form controls.</p>
+        
+        <h1 id="requirements">Requirements</h1>
+        <p>You will need to create an interface that has the following form controls:</p>
+        <ul>
+            <li>A way to select the monkey's sex.</li>
+            <li>A way to set the value of the "left ear". This is essentially a three digit binary number (e.g., 000, 010, 100, 110).</li>
+            <li>A way to set the value of the "right ear". Possible values are the same as the left ear.</li>
+            <li>A way to select the group. There are several types of groups, so a dropdown would probably be best for this. These group values depend on the database, so they will be filled via JavaScript.</li>
+        </ul>
+        <p>Make sure to keep in mind when selecting what kind of form controls you use that speed is of utmost importance to the users. For example, a dropdown for the monkey's sex would not be as ideal as two buttons. Also, for each form control, you'll want the user to be able to toggle whether it is in use, because that information might not be known. This means that you'll need to use things like toggle buttons.</p>
+        <p>You need to create a table that displays the matching monkeys. You should display the following fields: ID, Sex, Birth Year, Earnotches*, Group, Notes. Note that earnotches is just the left ear value concatenated by a hyphen and the right ear value.</p>
+        <p>Finally, there are two other things that will be useful to the user. Since the database can only be updated with Internet access, it would be useful to display the last time it was updated on the screen. This would be filled in with JavaScript. Additionally, it would be useful to have a button somewhere that resets all of the form parameters so that they can easily identify multiple monkeys quickly.</p>
+        <p>Although the researcher specifically said an iPad would be used, try to make the site compatible with an iPad as well as an iPhone sized screen. When using Bootstrap (see <a href="#tools">Tools</a> below) to create the layout, make sure to follow its grid system which will make the site responsive and adapt to an iPhone as well as an iPad. If this sounds confusing now, just keep it in mind, and it should make sense when you are actually working with Bootstrap.</p>
+
+        <h2 id="coordination">Coordination with Other Components</h2>
+        <p>You will need to call a function when any form field is updated. You will coordinate this with the <a href="component_front_javascript.html">Front-End Database JavaScript</a> team. You may also want to create a link to the page where you can update the database created by the <a href="component_back_database_upload.html">Database Upload Form</a> team.</p>
+        
+        <h1 id="tools">Tools</h1>
+        <ul>
+            <li><strong><a href="http://getbootstrap.com" target="_blank">Bootstrap</a>:</strong> Bootstrap is a <a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets" target="_blank">CSS</a> framework that is commonly used to create web applications. It includes many CSS classes and JavaScript components that are used in web applications. It also uses <a href="https://en.wikipedia.org/wiki/Responsive_web_design" target="_blank">responsive design</a>, so the
+            design that you construct will adapt to both an iPhone and an iPad (as well as a desktop browser if you wanted).</li>
+            <li><strong><a href="http://jquery.com/" target="_blank">jQuery</a>:</strong> jQuery is a required component of Bootstrap, and you will use this JavaScript library to make some of the interactive components of the form work.</li>
+        </ul>
+    </div>
+    
+    <div class="col-md-3">
+        <div data-spy="affix" data-offset-top="70" class="sidenav">
+            <ul class="nav">
+                <li>
+                    <a href="#requirements">Requirements</a>
+                    
+                    <ul class="nav">
+                        <li><a href="#coordination">Coordination</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#tools">Tools</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    </div> <!-- /container -->
+
+    <div class="footer">
+        <div class="container">
+            <p class="text-muted">This guide was created by <a href="http://alanrussian.com" target="_blank">Alan Russian</a> for <a href="http://sun.iwu.edu/~acm" target="_blank">Illinois Wesleyan University's chapter of ACM</a></p>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
+

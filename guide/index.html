@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+
+    <title>Monkey See Monkey Do</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/site.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body data-spy="scroll" data-target=".sidenav">
+
+    <div class="container">
+
+      <!-- Static navbar -->
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Monkey See Monkey Do</a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li class="active"><a href="index.html">Overview</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Components <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+        		  <li class="dropdown-header">Front-End</li>
+                  <li><a href="component_front_interface.html">Interface &amp; Design</a></li>
+                  <li><a href="component_front_javascript.html">Database JavaScript</a></li>
+
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Back-End</li>
+                  <li><a href="component_back_database_upload.html">Database Upload Form</a></li>
+                  <li><a href="component_back_database_deliver.html">Deliver Database to Front-End</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </div>
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="col-md-9">
+        <h1 class="page-header main">Overview</h1>
+        <p class="lead">A web app to filter and identify monkeys in the field based on physical cues.</p>
+        
+        <h1 id="background-info">Background</h1>
+        <p>The Psychology department occasionally goes to Puerto Rico to perform studies on monkeys. It is important that they be able to identify these monkeys while on the field. Each monkey has a unique identifier, which is actually planted on the monkey, but it is often times impossible to read for various reasons.</p>
+        <p>The owners of the monkeys keep a database of the monkeys which includes each monkey's ID and some physical characteristics of the monkey. It is possible for our researchers to easily identify these physical characteristics of the monkeys when observing them. Therefore, the researchers would like some sort of program that lets them plug in these physical traits and get a list of monkeys matching them.</p>
+        
+        <h2 id="background-constraints">Constraints</h2>
+        <ul>
+            <li>They would like to use iPads.</li>
+            <li>They do not have Internet access while on the field (though they do where they are spending their nights).</li>
+        </ul>
+
+        <h1 id="development">Development Environment</h1>
+        <p>We will be using <a href="https://github.com" target="_blank">GitHub</a> to host the repository for our project. GitHub is a Git repository hosting service that many open source projects use, and Git is a popular <a href="https://en.wikipedia.org/wiki/Revision_control" target="_blank">Version Control</a> program. Follow this <a href="https://help.github.com/articles/set-up-git" target="_blank">installation guide</a> to setup Git (I recommend you do not install the "native app" but download Git instead). Then, we
+        will go over together how to use Git when working on this project. Our repository can be found on GitHub at <a href="https://github.com/acm-iwu/monkey-see-monkey-do" target="_blank">acm-iwu/monkey-see-monkey-do</a>.</p>
+        <p>Here are some resources on how Git works if you would like to learn more about it:</p>
+        <ul>
+            <li><a href="http://try.github.io/levels/1/challenges/1" target="_blank">Code School - Try Git</a> &ndash; This is an interactive Git tutorial. I highly recommend trying this out if you've never used Git before.</li>
+            <li><a href="http://rogerdudler.github.io/git-guide/" target="_blank">git - the simple guide</a></li>
+        </ul>
+        
+        <h1 id="implementation">Implementation Overview</h1>
+        <p>There are many ways to go about this. We could create a native iPad app or create a web app. A native iPad app would require us to pay money for the iOS developer fee, and is more difficult to get started with, so we decided to go with the web app. Note that it is possible to create a web app that gets cached on an iOS device so that Internet is not required.</p>
+
+        <h2 id="implementation-front">Front-End</h2>
+        <p>For the front end, we are going to have a bunch of form controls that let you filter the monkeys. As the monkeys get filtered out, we will update a table showing matching monkeys in real time.</p>
+        <h3>Components</h3>
+        <ul>
+            <li><a href="component_front_interface.html">Interface and Design</a></li>
+            <li><a href="component_front_javascript.html">Database JavaScript</a></li>
+        </ul>
+
+        <h2 id="implementation-back">Back-End</h2>
+        <p>The database gets updated approximately once a year. We need an interface that allows the Psychology department to update the database when it comes around. We also need to deliver this to the front-end when we load the site.</p>
+        <h3>Constraints</h3>
+        <p>Since we will want to put this on IWU's Sun server once completed, it would be easiest to use PHP for the back-end scripting language.</p>
+        <h3>Components</h3>
+        <ul>
+            <li><a href="component_back_database_upload.html">Database Upload Form</a></li>
+            <li><a href="component_back_database_deliver.html">Deliver Database to Front-End</a></li>
+        </ul>
+    </div>
+    
+    <div class="col-md-3">
+        <div data-spy="affix" data-offset-top="70" class="sidenav">
+            <ul class="nav">
+                <li>
+                    <a href="#background-info">Background</a>
+                    
+                    <ul class="nav">
+                        <li><a href="#background-constraints">Constraints</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#development">Development Environment</a></li>
+
+                <li>
+                    <a href="#implementation">Implementation Overview</a>
+
+                    <ul class="nav">
+                        <li><a href="#implementation-front">Front-End</a></li>
+                        <li><a href="#implementation-back">Back-End</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    </div> <!-- /container -->
+
+    <div class="footer">
+        <div class="container">
+            <p class="text-muted">This guide was created by <a href="http://alanrussian.com" target="_blank">Alan Russian</a> for <a href="http://sun.iwu.edu/~acm" target="_blank">Illinois Wesleyan University's chapter of ACM</a></p>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
+

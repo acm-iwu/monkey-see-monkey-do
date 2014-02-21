@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+
+    <title>Monkey See Monkey Do</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/site.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body data-spy="scroll" data-target=".sidenav">
+
+    <div class="container">
+
+      <!-- Static navbar -->
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Monkey See Monkey Do</a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="index.html">Overview</a></li>
+              <li class="dropdown active">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Components <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+        		  <li class="dropdown-header">Front-End</li>
+                  <li><a href="component_front_interface.html">Interface &amp; Design</a></li>
+                  <li><a href="component_front_javascript.html">Database JavaScript</a></li>
+
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Back-End</li>
+                  <li><a href="component_back_database_upload.html">Database Upload Form</a></li>
+                  <li class="active"><a href="component_back_database_deliver.html">Deliver Database to Front-End</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </div>
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="col-md-9">
+        <h1 class="page-header main">Back-End: Deliver Database to Front-End</h1>
+        <p class="lead">This component deals with the parsing and delivery of the database from the back- to front- end.</p>
+        
+        <h1 id="requirements">Requirements</h1>
+        <p>The <a href="component_back_database_upload.html">Database Upload Form</a> component will drop a file onto the server with the monkey database. This database is provided in a tab delimited file (see an <a href="examples/database.txt">example</a>). Your responsibility is to parse this tab delimited file and return a JSON array of objects (e.g., <a href="examples/database.json">JSON array of objects for the previous example</a>). Furthermore, it may be a good idea to cache the
+        JSON file you create. The cache would have to be recreated every time that a new database is uploaded, though.</p>
+        <p>You must use <strong>PHP</strong> for the server-side scripting language, because this project will eventually reside on the IWU Sun server which has PHP most readily available.</p>
+
+        <h2 id="coordination">Coordination with Other Components</h2>
+        <p>Be sure that the JSON output looks like the provided <a href="examples/database.json">example</a>.</p>
+
+        <h1 id="tools">Tools</h1>
+        <p>Review the PHP documentation on reading CSV files. Also, note that the Sun server has <strong>PHP version 5.1.6</strong>, so you cannot use functions like <a href="http://www.php.net/manual/en/function.str-getcsv.php" target="_blank"><em>str_getcsv</em></a>.</p>
+    </div>
+    
+    <div class="col-md-3">
+        <div data-spy="affix" data-offset-top="70" class="sidenav">
+            <ul class="nav">
+                <li>
+                    <a href="#requirements">Requirements</a>
+                    
+                    <ul class="nav">
+                        <li><a href="#coordination">Coordination</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#tools">Tools</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    </div> <!-- /container -->
+
+    <div class="footer">
+        <div class="container">
+            <p class="text-muted">This guide was created by <a href="http://alanrussian.com" target="_blank">Alan Russian</a> for <a href="http://sun.iwu.edu/~acm" target="_blank">Illinois Wesleyan University's chapter of ACM</a></p>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
+

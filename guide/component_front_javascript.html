@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="assets/ico/favicon.ico">
+
+    <title>Monkey See Monkey Do</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/site.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body data-spy="scroll" data-target=".sidenav">
+
+    <div class="container">
+
+      <!-- Static navbar -->
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Monkey See Monkey Do</a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="index.html">Overview</a></li>
+              <li class="dropdown active">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Components <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+        		  <li class="dropdown-header">Front-End</li>
+                  <li><a href="component_front_interface.html">Interface &amp; Design</a></li>
+                  <li class="active"><a href="component_front_javascript.html">Database JavaScript</a></li>
+
+                  <li class="divider"></li>
+                  <li class="dropdown-header">Back-End</li>
+                  <li><a href="component_back_database_upload.html">Database Upload Form</a></li>
+                  <li><a href="component_back_database_deliver.html">Deliver Database to Front-End</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+      </div>
+
+      <!-- Main component for a primary marketing message or call to action -->
+      <div class="col-md-9">
+        <h1 class="page-header main">Front-End: Database JavaScript</h1>
+        <p class="lead">This component deals with the loading and filtering of data from the monkey database.</p>
+        
+        <h1 id="requirements">Requirements</h1>
+        <p>Ultimately, you need to create a function that reads the form inputs, filters the database, and displays the matching monkeys in the table. As explained below, the database will be retrieved from a different component using AJAX. The filter function should be as quick as possible, and it should update the table in real time (i.e., as form controls are changed).</p>
+        <p>You must keep in mind that this application will be offline when it is used in the field. Therefore, you will need to cache the data you receive. Apple has a <a href="https://developer.apple.com/library/safari/documentation/iphone/conceptual/safarijsdatabaseguide/offlineapplicationcache/offlineapplicationcache.html" target="_blank">guide</a> on their developer site that talks about doing this. You'll also want to store the last time the database was updated, so that you can display that to the user.
+        <strong>You will be responsible for making sure that the application will work both online and offline.</strong></p>
+
+        <h2 id="coordination">Coordination with Other Components</h2>
+        <p>You will use the <a href="component_back_database_deliver.html">Deliver Database to Front-End</a> component to get a JSON string with the database values using AJAX. I have uploaded an <a href="examples/database.json">example</a> of what that component should look like so that you can test it.</p>
+        <p>You will need to fill in the group form field and the last updated date on the interface.</p>
+        
+        <h1 id="tools">Tools</h1>
+        <ul>
+            <li><strong><a href="http://jquery.com/" target="_blank">jQuery</a>:</strong> You will have jQuery available to you, and it will make it easy for you to read and update the form fields as well as to do perform the AJAX operations.</li>
+        </ul>
+    </div>
+    
+    <div class="col-md-3">
+        <div data-spy="affix" data-offset-top="70" class="sidenav">
+            <ul class="nav">
+                <li>
+                    <a href="#requirements">Requirements</a>
+                    
+                    <ul class="nav">
+                        <li><a href="#coordination">Coordination</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#tools">Tools</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    </div> <!-- /container -->
+
+    <div class="footer">
+        <div class="container">
+            <p class="text-muted">This guide was created by <a href="http://alanrussian.com" target="_blank">Alan Russian</a> for <a href="http://sun.iwu.edu/~acm" target="_blank">Illinois Wesleyan University's chapter of ACM</a></p>
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
+
