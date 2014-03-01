@@ -79,6 +79,29 @@
         <ul>
             <li><strong><a href="http://jquery.com/" target="_blank">jQuery</a>:</strong> You will have jQuery available to you, and it will make it easy for you to read and update the form fields as well as to do perform the AJAX operations.</li>
         </ul>
+
+        <h1 id="steps">Steps</h1>
+        <ol>
+            <li><strong>Get familiar with JavaScript and jQuery.</strong> W3Schools has a nice <a href="http://www.w3schools.com/js/js_intro.asp" target="_blank">JavaScript tutorial</a>, and jQuery's website has a nice <a href="http://learn.jquery.com/about-jquery/how-jquery-works/" target="_blank">jQuery tutorial</a>.</li>
+            <li><strong>Create the JavaScript file.</strong> Start by creating a JavaScript file named something like <em>site.js</em> and place it in a directory named <em>js</em>.</li>
+            <li><strong>Retrieve the database from the back-end.</strong> The <em>get_database.php</em> file will return the database in JSON format. Stack Overflow has a good <a href="http://stackoverflow.com/questions/383692/what-is-json-and-why-would-i-use-it" target="_blank">explanation of what JSON is</a>. In order to get the database JSON from the back-end, you can use jQuery's <a href="http://api.jquery.com/jquery.getjson/" target="_blank">getJSON() function</a>. Save the database in a variable that you can access later to update the table.</li>
+            <li>
+                <strong>Create an update table function.</strong> You need a function that updates the table whenever a field is updated. This function needs to read the values of the form fields created by the <a href="component_front_interface.html">Interface &amp; Design</a> team.
+                <ul>
+                    <li>Make sure that each form element has an <em>ID</em> attribute, which will allow you to access its value by using jQuery's <a href="http://api.jquery.com/val/" target="_blank">.val() function</a>. For example, if you have a <code>&lt;select&gt;</code> element with <code>id="group"</code>, you could access its value by using <code>$("#group").val()</code>. On toggle buttons (which you will create JavaScript code for below), you can use the <a href="https://api.jquery.com/hasClass/" target="_blank">.hasClass() function</a> on a button to see if it is selcted by seeing if it has the "active" class.</li>
+                    <li>Clear out the contents of the table. You can use jQuery's <a href="http://api.jquery.com/empty/" target="_blank">.empty()</a> function on the <code>&lt;tbody&gt;</code> element to do this.</li>
+                    <li>Loop through the array with the monkey data you created above and check each item to see if it meets the requirements set forth by the form fields. If it does, add it to the table using jQuery. Here is a tutorial on <a href="http://stackoverflow.com/a/1278557/867915" target="_blank">how to add rows to table</a> using jQuery.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Create event listeners on the form elements.</strong> You need to have the function you just created get executed whenever a form field is changed.
+                <ul>
+                    <li>The jQuery tutorial above shows you how to create event listeners. For a <code>&lt;select&gt;</code> element, you would use the <a href="http://api.jquery.com/change/" target="_blank">.change()</a> listener. For a button, you would use a <a href="http://api.jquery.com/click/" target="_blank">.click()</a> listener.</li>
+                    <li>Additionally, if the <a href="component_front_interface.html">Interface &amp; Design</a> team chose to make toggle buttons, you need to create code that  make these work. For each series of toggle buttons, you need to listen to clicks on the buttons. If a button is clicked, you need to <a href="https://api.jquery.com/toggleClass/" target="_blank">toggle</a> the "active" class (this is a Bootstrap class) on it and <a href="https://api.jquery.com/removeClass/" target="_blank">remove</a> the "active" class on the other buttons in that group.</li>
+                </ul>
+            </li>
+            <li><strong>Make the application work offline.</strong> More instructions on this will be coming. If you reach this step early, try to follow <a href="https://developer.apple.com/library/safari/documentation/iphone/conceptual/safarijsdatabaseguide/offlineapplicationcache/offlineapplicationcache.html" target="_blank">Apple's guide on the subject</a>.</li>
+        </ol>
     </div>
     
     <div class="col-md-3">
@@ -94,6 +117,10 @@
 
                 <li>
                     <a href="#tools">Tools</a>
+                </li>
+
+                <li>
+                    <a href="#steps">Steps</a>
                 </li>
             </ul>
         </div>

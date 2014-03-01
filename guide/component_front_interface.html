@@ -88,6 +88,21 @@
             design that you construct will adapt to both an iPhone and an iPad (as well as a desktop browser if you wanted).</li>
             <li><strong><a href="http://jquery.com/" target="_blank">jQuery</a>:</strong> jQuery is a required component of Bootstrap, and you will use this JavaScript library to make some of the interactive components of the form work.</li>
         </ul>
+
+        <h1 id="steps">Steps</h1>
+        <ol>
+            <li><strong>Get familiar with Bootstrap.</strong> Bootstrap is a CSS framework commonly used for web application interfaces. CSS is a language that is used to define the style of a web page. Review the <a href="http://getbootstrap.com/getting-started/#examples" target="_blank">examples</a> provided on the <a href="http://getbootstrap.com/" target="_blank">Bootstrap</a> website, and copy the source of one into an HTML file called <em>index.html</em>. Then, you need to <a href="http://getbootstrap.com/getting-started/#download" target="_blank">download Bootstrap</a> and extract the contents inside the main directory. Finally, make sure that all of the links to CSS and JavaScript files point to the files you just downloaded. You may also need to copy a CSS file that it links to, and you can see what it links to by viewing the source.</li>
+            <li>
+                <strong>Add the necessary form components.</strong> Copy Bootstrap's <a href="http://getbootstrap.com/css/#forms" target="_blank">form examples</a> to create all of the form inputs as described in the requirements. To conserve space, it might be a good idea to use the horizontal form layout.
+                <ul>
+                    <li>Make sure that you read the requirements closely and use your best judgement to pick form elements. You can get an idea of what kind of form elements are available by reading through the form examples or by going to the <a href="http://www.w3schools.com/html/html_forms.asp" target="_blank">W3Schools page on forms</a>.</li>
+                    <li>Keep in mind that you can use <a href="http://getbootstrap.com/css/#buttons" target="_blank">buttons</a> in Bootstrap. Another thing that might be useful are <a href="http://getbootstrap.com/components/#btn-groups" target="_blank">button groups</a>, which could be used for something like the monkey's gender.</li>
+                    <li>Something that Bootstrap does not include but that could be useful are toggle buttons. I have created an <a href="#" data-toggle="modal" data-target="#toggleExample">example of what I mean</a>. The <a href="component_front_javascript.html">Front-End JavaScript</a> team will make the buttons toggle-able, so all you need to worry about is creating the button elements themselves.</li>
+                </ul>
+            </li>
+            <li><strong>Create the table.</strong> Review Bootstrap's <a href="http://getbootstrap.com/css/#tables" target="_blank">table examples</a> and create a table with the fields mentioned above. It would probably look best if this were positioned on the bottom of the screen.</li>
+            <li><strong>Add other components.</strong> The requirements also call for a spot to show when the database was last updated. Just leave a <em>div</em> element there with an ID that will let the <a href="component_front_javascript.html">Front-End: Database JavaScript</a> team work on. Secondly, you need to create a button somewhere that clears out all of the form elements. The aforementioned team will also make this work, so you just need to create the button.</li>
+        </ol>
     </div>
     
     <div class="col-md-3">
@@ -104,6 +119,10 @@
                 <li>
                     <a href="#tools">Tools</a>
                 </li>
+
+                <li>
+                    <a href="#steps">Steps</a>
+                </li>
             </ul>
         </div>
     </div>
@@ -115,12 +134,49 @@
             <p class="text-muted">This guide was created by <a href="http://alanrussian.com" target="_blank">Alan Russian</a> for <a href="http://sun.iwu.edu/~acm" target="_blank">Illinois Wesleyan University's chapter of ACM</a></p>
         </div>
     </div>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="toggleExample" tabindex="-1" role="dialog" aria-labelledby="toggleExampleLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="toggleExampleLabel">Button Toggle Example</h4>
+          </div>
+          <div class="modal-body">
+            <div class="btn-group" id="toggleExampleButtons">
+                <button type="button" class="btn btn-default">Option 1</button>
+                <button type="button" class="btn btn-default">Option 2</button>
+                <button type="button" class="btn btn-default">Option 3</button>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript">
+        $(function() {
+            var buttons = $("#toggleExampleButtons button");
+            
+            buttons.each(function(i, element) {
+                var $element = $(element);
+                
+                $element.click(function() {
+                    buttons.not($element).removeClass("active");
+                    $element.toggleClass("active");
+                });
+            });
+        });
+    </script>
   </body>
 </html>
 
