@@ -78,6 +78,29 @@
         <ul>
             <li><strong><a href="http://getbootstrap.com/" target="_blank">Bootstrap</a>:</strong> Bootstrap, as explained in the tools under the <a href="component_front_interface.html">Front-End Interface &amp; Design</a> component, is a CSS framework commonly used for web application interfaces. Use this to make the interface of this component look cohesive with that component.</li>
         </ul>
+
+        <h1 id="steps">Steps</h1>
+        <p>There are two subcomponents to this component: the design and the PHP code. The design involves making it look like the main page. The PHP code involves making the upload functionality work.</p>
+        <p>I recommend that you start with the PHP code, and then work on the design.</p> 
+        
+        <h2 id="php">PHP Code</h2>
+        <ol>
+            <li><strong>Get familiar with PHP.</strong> There are <a href="https://www.google.com/search?q=php+tutorials" target="_blank">many tutorials</a> for PHP online. W3Schools has a <a href="http://www.w3schools.com/php/" target="_blank">PHP tutorial</a> that you can start off with.</li>
+            <li>
+                <strong>Build the upload form.</strong> As stated in the requirements, you need to create a form that allows the user to upload a database file and save it to the server.
+                <ol>
+                    <li>In order to do this, I would suggest that you search for a tutorial on how to upload files using PHP. Once again, W3Schools has a good <a href="http://www.w3schools.com/php/php_file_upload.asp" target="_blank">tutorial</a>.</li>
+                    <li>You'll find out that there are two components to this: the HTML and the PHP code. They can be placed within the same file. Display the upload form at the beginning and once they submit the form, display a message stating whether it has succeeded. You can check whether they have uploaded a file by seeing if the file parameter is present (e.g., <code>if (isset($_FILES['file'])) { /* handle upload */ } else { /* display form */ }</code> if you name the file field "file".</li>
+                    <li>Save the file that gets uploaded as <em>database.txt</em>.</li>
+                </ol>
+            </li>
+        </ol>
+        
+        <h2 id="design">Design</h2>
+        <ol>
+            <li><strong>Get familiar with Bootstrap.</strong> Bootstrap is a CSS framework commonly used for web application interfaces. CSS is a language that is used to define the style of a web page. You can refer to the <a href="http://getbootstrap.com/" target="_blank">Bootstrap website</a> whenever you have questions.</li>
+            <li><strong>Create the HTML file.</strong> I suggest that you copy the HTML code that the <a href="component_front_interface.html">Interface &amp; Design</a> team have created. Then, remove all of the parts that are specific to that page (e.g., the form components, the table) such that you're left with just the Bootstrap template and the header and anything else that they created. Now copy that form upload code (PHP and HTML) into this document and make it look pretty. Since you have PHP and HTML code in it, you need to make this a .php file.</li>
+        </ol>
     </div>
     
     <div class="col-md-3">
@@ -93,6 +116,15 @@
 
                 <li>
                     <a href="#tools">Tools</a>
+                </li>
+
+                <li>
+                    <a href="#steps">Steps</a>
+                    
+                    <ul class="nav">
+                        <li><a href="#php">PHP Code</a></li>
+                        <li><a href="#design">Design<a/></li>
+                    </ul>
                 </li>
             </ul>
         </div>
