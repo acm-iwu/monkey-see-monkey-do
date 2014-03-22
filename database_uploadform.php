@@ -27,30 +27,97 @@
   </head>
 
   <body>
+  
+  	
+	
 
     <div class="navbar navbar-inverse" role="navigation">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <!-- <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </button>
+          </button> !-->
           <a class="navbar-brand" href="index.html">Monkey Database</a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="index.html">Home</a></li>
-            <li><a href="database_uploadform.php">Upload</a></li>
+            <li ><a href="index.html">Home</a></li>
+            <li class="active"><a href="database_uploadform.php">Upload</a></li>
           </ul>
         </div><!--/.nav-collapse -->
-      </div>
+      </div> 
     </div>
 
     <div class="container">
 
-      <div class="starter-template">
+	 
+	<!-- HERE IS THE monkey_uploadform HTML THING !-->
+	<form class="form-horizontal" role="form" action="?" method="post"
+	enctype="multipart/form-data">
+		  <div class="form-group">
+		    <label for="file" class="col-sm-2 control-label">File</label>
+		    <div div class=" col-sm-10"> 
+			 <input type="file" name="file" id="file"> 
+		    </div>  
+		  </div>
+		  <div class="form-group">
+    		<div class="col-sm-offset-2 col-sm-10">
+      		<input type="submit" name="submit" value="Submit" class="btn btn-primary">
+    		</div>
+  		</div>
+	</form>
+
+	<?php
+	
+	if(isset($_POST['submit']))
+	{
+		$allowedExts = array("gif", "jpeg", "jpg", "png", "txt");
+		$fileTypes = array("image/gif", "image/jpg", "image/jpeg", "image/pjpeg", "image/x-png", "text/plain", "image/png");
+		$temp = explode(".", $_FILES["file"]["name"]);
+		$extension = end($temp);
+		$type = $_FILES["file"]["type"];
+
+		if (in_array($type, $fileTypes)
+		&& ($_FILES["file"]["size"] < 20000000)
+		&& in_array($extension, $allowedExts))
+ 		 {
+ 		 if ($_FILES["file"]["error"] > 0)
+  	 	 {
+  	  	echo "Return Code: " . $_FILES["file"]["error"] . "<br>";
+  		  }
+ 		 else
+ 		   {
+ 		   echo "Upload: " . $_FILES["file"]["name"] . "<br>";
+  	  	echo "Type: " . $_FILES["file"]["type"] . "<br>";
+  	 	 echo "Size: " . ($_FILES["file"]["size"] / 1024) . " kB<br>";
+  	 	 echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br>";
+    
+
+
+   	 	if (file_exists("upload/" . $_FILES["file"]["name"]))
+   	  	 {
+   	  	 echo $_FILES["file"]["name"] . " already exists. ";
+   	 	  }
+  		  else
+   		   {
+   		   move_uploaded_file($_FILES["file"]["tmp_name"],
+   		   "upload/" . $_FILES["file"]["name"]);
+   		   echo "Stored in: " . "upload/" . $_FILES["file"]["name"];
+   		   echo "<br> File Uploded Succesfully";
+   		   }
+  		  }
+ 		 }
+		else
+ 		 {
+ 		 echo "Invalid file! Have a nice day.";
+ 		 }
+ 	 } 
+	?>
+
+      <!--<div class="starter-template">
 		<form class="form-horizontal" role="form">
 		  <div class="form-group">
 		    <label for="inputEmail3" class="col-sm-2 control-label">Sex</label>
@@ -109,9 +176,16 @@
 		  	<tr>
 		  	</tr>
 		  </tbody>
-		</table>
-      </div>
+		</table> !-->
+      </div> 
+
+	<!-- NOT SURE WHERE TO PASTE THE PHP UPLOAD FORM. GUESS WE'LL TRY RIGHT HERE! !-->
 	
+	
+	
+	
+
+
 
     </div><!-- /.container -->
 
