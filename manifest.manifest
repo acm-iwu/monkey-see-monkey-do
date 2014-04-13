@@ -5,6 +5,7 @@ CACHE MANIFEST
 js/bootstrap.js
 js/bootstrap.min.js
 js/jquery.js
+js/site.js
 
 css/bootstrap-theme.css
 css/bootstrap-theme.css.map

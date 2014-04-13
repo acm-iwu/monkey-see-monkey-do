@@ -51,20 +51,14 @@
     <div class="container">
 
       <div class="starter-template">
-		<form class="form-horizontal" role="form">
+		<form class="form-horizontal" role="form" id="form1">
 		  <div class="form-group">
 		    <label for="inputEmail3" class="col-sm-2 control-label">Sex</label>
 		    <div class="col-sm-10"> 
-			  <div class="btn-group" data-toggle="buttons" id = "gender">
-			    <label class="btn btn-default">
-				  <input type="radio" name="options" id="option1"> Male
-				</label>
-				<label class="btn btn-default">
-				  <input type="radio" name="options" id="option2"> Female
-				</label>
-				<label class="btn btn-default">
-				  <input type="radio" name="options" id="option3"> Don't Know
-				</label>
+			  <div class="btn-group" id="gender">
+			    <button class="btn btn-default" id="male">M</button>
+			    <button class="btn btn-default" id="female">F</button>
+			    <button class="btn btn-default active" id="unavailable">Unavailable</button>
 		      </div>
 		    </div>  
 		  </div>
@@ -72,9 +66,9 @@
 		    <label for="leftEar" class="col-sm-2 control-label">Left Ear</label>
 		    <div class="col-sm-10"> 
 			  <div class="btn-group" data-toggle="buttons" id = "left_ear">
-			    <button class="btn btn-default" id="1">0</button>
-			    <button class="btn btn-default" id="2">0</button>
-			    <button class="btn btn-default" id="3">0</button>
+			    <button class="btn btn-default" id="left_ear1">0</button>
+			    <button class="btn btn-default" id="left_ear2">0</button>
+			    <button class="btn btn-default" id="left_ear3">0</button>
 			  </div>
 		      <div class="btn-group" data-toggle="buttons" id = "know">
 			    <button class="btn btn-default active" id="know">Don't Know</button>
@@ -85,9 +79,9 @@
 		    <label for="rightEar" class="col-sm-2 control-label">Right Ear</label>
 		    <div class="col-sm-10"> 
 			  <div class="btn-group" data-toggle="buttons" id="right_ear">
-			    <button class="btn btn-default" id="1">0</button>
-			    <button class="btn btn-default" id="2">0</button>
-			    <button class="btn btn-default" id="3">0</button>
+			    <button class="btn btn-default" id="right_ear1">0</button>
+			    <button class="btn btn-default" id="right_ear2">0</button>
+			    <button class="btn btn-default" id="right_ear3">0</button>
 			  </div>
 		      <div class="btn-group" data-toggle="buttons" id = "know1">
 			    <button class="btn btn-default active" id="know1">Don't Know</button>
@@ -102,19 +96,19 @@
 		    </div>
 		  </div>
 		</form>
-		<table class="table table-striped" id = "table">
+		<table class="table table-striped" id = "table1">
 		  <thead>
 		    <tr>
 		  	  <th>ID</th>
 		  	  <th>Sex</th>
 		  	  <th>Birth Year</th>
-		  	  <th>Ear Notches</th>
+		  	  <th>Left Ear</th>
+		  	  <th>Right Ear</th>
 		  	  <th>Notes</th>
 		    </tr>
 		  </thead>
-		  <tbody>
-		  	<tr>
-		  	</tr>
+		  <tbody id ="body1">
+
 		  </tbody>
 		</table>
       </div>
@@ -128,33 +122,6 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script>
- 
-		
-		$("#left_ear button, #right_ear button").click(function( event ) {
-			if ($(this).text()== "0") {
-			  $(this).text("1");
-			}
-			else{
-			  $(this).text("0");
-			}
-			event.preventDefault();
-		});
-		$("#left_ear button").click(function( event ) {
-			$("#know button").removeClass("active");
- 		});
- 		$("#right_ear button").click(function( event ) {
-			$("#know1 button").removeClass("active");
- 		});
- 		$("#know button").click(function( event ) {
-			$("#left_ear button").removeClass("active");
-			$("#left_ear button").text("0");
- 		});
- 		$("#know1 button").click(function( event ) {
-			$("#right_ear button").removeClass("active");
-			$("#right_ear button").text("0");
- 		});
-    </script>
-    
+    <script src="js/site.js"></script>    
   </body>
 </html>
