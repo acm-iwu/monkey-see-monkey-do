@@ -63,6 +63,17 @@ $("#groupKnowledge").click(function(e) {
 
     e.preventDefault();
 });
+$("#resetFilters").click(function(e) {
+    $("#unavailable, #know, #know1, #groupKnowledge").each(function(i, element) {
+        var $element = $(element);
+        
+        if (! $element.hasClass("active")) {
+            $element.click();
+        }
+    });
+
+    e.preventDefault();
+});
 
 
 //JSON string parsing
