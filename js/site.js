@@ -29,10 +29,10 @@ $("#unavailable").click(function( event ) {
 });
 
 $("#left_ear button").click(function( event ) {
-	$("#know button").removeClass("active");
+	$("#know").removeClass("active");
 });
 $("#right_ear button").click(function( event ) {
-	$("#know1 button").removeClass("active");
+	$("#know1").removeClass("active");
 });
 $("#know button").click(function( event ) {
 	$("#left_ear button").removeClass("active");
@@ -68,18 +68,26 @@ function update_table() {
 	var left_ear = $("#left_ear1").text() + $("#left_ear2").text() + $("#left_ear3").text();
 	var right_ear = $("#right_ear1").text() + $("#right_ear2").text() + $("#right_ear3").text();
 	var gender = $("#gender .active").text(); 
-	
 	for(var i = 0; i < monkeys.length; i++){
-	
-	//if(left_ear == 'Don\'t Know' || right_ear == 'Don\'t Know' || gender == 'Unavailable'){
-			if(monkeys[i].sex != gender || monkeys[i].rightEar != right_ear || monkeys[i].leftEar != left_ear){
-					rows[i].remove();
-				}
-				else{
-					rows[i].appendTo("#table1 tbody");
-				}
-			}
-	//}
+		var matches  = true;
+		
+		if(!($("#know").hasClass('active')) && monkeys[i].leftEar != left_ear){
+			matches = false;
+		}
+		else if(!($("#know1").hasClass('active')) && monkeys[i].rightEar != right_ear){
+			matches = false;
+		}
+		else if(gender != 'Unavailable' && monkeys[i].sex != gender){
+			matches = false;
+		}
+		
+		if(matches){
+			rows[i].appendTo("#table1 tbody");
+		}
+		else{
+			rows[i].remove();
+		}
+	}
 }
 
 
