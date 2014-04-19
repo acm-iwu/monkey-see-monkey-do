@@ -127,6 +127,8 @@ function build_table(){
                 .text(group)
         );
     }
+
+    update_monkey_count();
 }
 
 $("#form1 button").click(update_table);
@@ -161,6 +163,12 @@ function update_table() {
 			rows[i].remove();
 		}
 	}
+
+    update_monkey_count();
 }
 
+function update_monkey_count() {
+    var monkeys = $("#body1 tr").length;
 
+    $("#monkeysFound").text(monkeys +" monkey"+ (monkeys == 1 ? "" : "s") +" found.");
+}
