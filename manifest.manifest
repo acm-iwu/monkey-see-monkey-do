@@ -13,6 +13,7 @@ css/bootstrap-theme.min.css
 css/bootstrap.css
 css/bootstrap.css.map
 css/bootstrap.min.css
+css/site.css
 
 fonts/glyphicons-halflings-regular.eot
 fonts/glyphicons-halflings-regular.svg
@@ -20,3 +21,7 @@ fonts/glyphicons-halflings-regular.ttf
 fonts/glyphicons-halflings-regular.woff
 
 get_database.php
+index.html
+?
+/
+.

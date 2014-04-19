@@ -43,6 +43,26 @@ $("#kno button").click(function( event ) {
 	$("#right_ear button").text("0");
 });
 
+$("#group").change(function(e) {
+    var value = $(this).val();
+
+    if (value === "") {
+        $("#groupKnowledge").addClass("active");
+    } else {
+        $("#groupKnowledge").removeClass("active");
+    }
+
+    e.preventDefault();
+});
+$("#groupKnowledge").click(function(e) {
+    // Select empty value for group
+    $("#group").val("");
+
+    // Activate button
+    $(this).addClass("active");
+
+    e.preventDefault();
+});
 
 
 //JSON string parsing
@@ -111,9 +131,11 @@ function update_table() {
 		}
 		else if(gender != 'Unavailable' && monkeys[i].sex != gender){
 			matches = false;
-		}
+		} else if (group != "" && monkeys[i].group != group) {
+            matches = false;
+        }
 		
-		if(matches && monkeys[i].group == group){
+		if(matches){
 			rows[i].appendTo("#table1 tbody");
 		}
 		else{
