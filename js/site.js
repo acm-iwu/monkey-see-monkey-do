@@ -54,10 +54,40 @@ $.getJSON("get_database.php", function(data) {
 
 var rows = {};
 function build_table(){
+    // This will be a set of all the groups
+    var groupsSet = {};
+
 	for(var i = 0; i < monkeys.length; i++){
+        // Add to table
 		rows[i] = $('<tr><td>' + monkeys[i].id + '</td><td>' + monkeys[i].sex + '</td><td>'+ monkeys[i].birthYear +'</td><td>' + monkeys[i].leftEar + '</td><td>' + monkeys[i].rightEar + '</td><td>' + monkeys[i].notes + '</td></tr>');
 		$('#table1 tbody').append(rows[i]);
+
+        // Add to groups set
+        groupsSet[monkeys[i].group] = true;
 	}
+
+    // Convert the set to an array
+    var groups = [];
+    for (var group in groupsSet) {
+        groups.push(group);
+    }
+
+    // Sort case insensitively
+    groups.sort(function (a, b) {
+        return a.toLowerCase().localeCompare(b.toLowerCase());
+    });
+
+    // Build select options
+    var select = $("#group");
+    for (var i = 0; i < groups.length; i ++) {
+        var group = groups[i];
+
+        select.append(
+            $("<option>")
+                .val(group)
+                .text(group)
+        );
+    }
 }
 
 $("#form1 button").click(update_table);
