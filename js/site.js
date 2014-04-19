@@ -34,11 +34,11 @@ $("#left_ear button").click(function( event ) {
 $("#right_ear button").click(function( event ) {
 	$("#know1").removeClass("active");
 });
-$("#know button").click(function( event ) {
+$("#kn button").click(function( event ) {
 	$("#left_ear button").removeClass("active");
 	$("#left_ear button").text("0");
 });
-$("#know1 button").click(function( event ) {
+$("#kno button").click(function( event ) {
 	$("#right_ear button").removeClass("active");
 	$("#right_ear button").text("0");
 });
@@ -59,7 +59,7 @@ function build_table(){
 
 	for(var i = 0; i < monkeys.length; i++){
         // Add to table
-		rows[i] = $('<tr><td>' + monkeys[i].id + '</td><td>' + monkeys[i].sex + '</td><td>'+ monkeys[i].birthYear +'</td><td>' + monkeys[i].leftEar + '</td><td>' + monkeys[i].rightEar + '</td><td>' + monkeys[i].notes + '</td></tr>');
+		rows[i] = $('<tr><td>' + monkeys[i].id + '</td><td>' + monkeys[i].sex + '</td><td>'+ monkeys[i].birthYear +'</td><td>' + monkeys[i].leftEar + '</td><td>' + monkeys[i].rightEar + '</td><td>' + monkeys[i].group + '</td><td>' + monkeys[i].notes + '</td></tr>');
 		$('#table1 tbody').append(rows[i]);
 
         // Add to groups set
@@ -92,12 +92,14 @@ function build_table(){
 
 $("#form1 button").click(update_table);
 
-$("#form1 input").change(update_table);
+$("#form1 input, #form1 select").change(update_table);
 
 function update_table() {
 	var left_ear = $("#left_ear1").text() + $("#left_ear2").text() + $("#left_ear3").text();
 	var right_ear = $("#right_ear1").text() + $("#right_ear2").text() + $("#right_ear3").text();
 	var gender = $("#gender .active").text(); 
+	var group = $("#group").val();
+	
 	for(var i = 0; i < monkeys.length; i++){
 		var matches  = true;
 		
@@ -111,7 +113,7 @@ function update_table() {
 			matches = false;
 		}
 		
-		if(matches){
+		if(matches && monkeys[i].group == group){
 			rows[i].appendTo("#table1 tbody");
 		}
 		else{
