@@ -37,10 +37,18 @@ $("#right_ear button").click(function( event ) {
 $("#kn button").click(function( event ) {
 	$("#left_ear button").removeClass("active");
 	$("#left_ear button").text("0");
+
+    $(this).toggleClass("active");
+
+    event.preventDefault();
 });
 $("#kno button").click(function( event ) {
 	$("#right_ear button").removeClass("active");
 	$("#right_ear button").text("0");
+
+    $(this).toggleClass("active");
+
+    event.preventDefault();
 });
 
 $("#group").change(function(e) {
